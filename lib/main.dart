@@ -1,4 +1,5 @@
 import 'package:cv_design/view/cv_design.dart';
+import 'package:cv_design/view/cv_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(fontFamily: "Roboto"),
+      theme: ThemeData(fontFamily: "Sora"),
     debugShowCheckedModeBanner: false,
   
-      home:ResumeHomePage()
+      home:CvScreen()
     );
   }
 }

@@ -8,11 +8,12 @@ class ResumeHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return 
+    Scaffold(
       // 🔹 Responsive AppBar
 
 appBar: PreferredSize(
-  preferredSize: const Size.fromHeight(50),
+  preferredSize: const Size.fromHeight(40),
   child: LayoutBuilder(
     builder: (context, constraints) {
       final width = constraints.maxWidth;
@@ -191,7 +192,7 @@ appBar: PreferredSize(
 
           // 🔸 Responsive font scaling
           double headingSize = isMobile
-              ? 23
+              ? 25
               : isTablet
                   ? 28
                   : 32;
@@ -212,7 +213,7 @@ Container(
   width: double.infinity,
   constraints: BoxConstraints(
     // ✅ Minimum height chhoti screen ke hisaab se
-    minHeight: isMobile ? 220 : 260,
+    minHeight: isMobile ? 240 : 260,
     // ✅ Maximum height optional (overflow prevent karne ke liye)
     maxHeight: isMobile ? double.infinity : 300,
   ),
@@ -222,7 +223,7 @@ Container(
         : isTablet
             ? 60
             : 100,
-    vertical: isMobile ? 30 : 40, // extra padding instead of fixed height
+    vertical: isMobile ? 50 : 30, // extra padding instead of fixed height
   ),
   decoration: const BoxDecoration(
     gradient: LinearGradient(
@@ -237,6 +238,16 @@ Container(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+
+
+        Container(
+          height: 26,
+          width: 300,
+          decoration: BoxDecoration(color: Colors.transparent,border: Border.all(color: Colors.white),borderRadius: BorderRadius.circular(20)),
+
+          child: Center(child: Text("Upload Your existing resume & auto-fill",style: TextStyle(color: const Color.fromARGB(255, 248, 243, 243)),)),
+        ),
+        SizedBox(height: 13),
         Text(
           'Create Your Perfect',
           textAlign: TextAlign.center,
@@ -449,6 +460,8 @@ Container(
         },
       ),
     );
+ 
+ 
   }
 }
 
