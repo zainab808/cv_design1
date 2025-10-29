@@ -83,31 +83,10 @@ class SmartCvCard extends StatelessWidget {
     required this.width,
   });
 
-  // 🔹 Alert dialog show karne ka helper
-  void _showAlert(BuildContext context, String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        title: const Text(
-          'Alert!',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
+ 
 
   @override
-  Widget build(BuildContext context) {
+    Widget build(BuildContext context) {
     return Container(
       width: width,
       constraints: const BoxConstraints(minHeight: 240, maxWidth: 270),
@@ -129,34 +108,26 @@ class SmartCvCard extends StatelessWidget {
           const SizedBox(height: 20),
 
           // 🔹 Title (alert on tap)
-          GestureDetector(
-            key: ValueKey('title_$title'),
-            onTap: () => _showAlert(context, '$title title pressed!'),
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 10),   
 
-          // 🔹 Description (alert on tap)
-          GestureDetector(
-            key: ValueKey('desc_$title'),
-            onTap: () => _showAlert(context, '$title description pressed!'),
-            child: Text(
-              desc,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontFamily: "Sora",
-                fontSize: 14,
-                color: Colors.white70,
-                height: 1.4,
-              ),
+       
+          Text(
+            desc,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontFamily: "Sora",
+              fontSize: 14,
+              color: Colors.white70,
+              height: 1.4,
             ),
           ),
         ],

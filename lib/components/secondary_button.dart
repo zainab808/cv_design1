@@ -63,28 +63,6 @@ class SecondaryButton extends StatelessWidget {
     required this.textColor,
   });
 
-  // 🔹 Alert show karne ka function
-  void _showAlert(BuildContext context, String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        title: const Text(
-          'Alert!',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,17 +77,12 @@ class SecondaryButton extends StatelessWidget {
         ),
       ),
 
-      // 🔸 Sirf text ke liye GestureDetector lagaya gaya hai
-      child: GestureDetector(
-        key: ValueKey('text_$text'),
-        onTap: () => _showAlert(context, '$text pressed!'),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textColor,
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: textColor,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

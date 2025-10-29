@@ -1,5 +1,6 @@
 import 'package:cv_design/view/cv_design.dart';
 import 'package:cv_design/view/cv_screen.dart';
+import 'package:cv_design/view/free_resume_templete.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: "Sora"),
     debugShowCheckedModeBanner: false,
   
-      home:CvScreen()
+      home:FreeResumeTemplatesScreen()
     );
   }
 }

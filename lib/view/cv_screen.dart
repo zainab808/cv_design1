@@ -110,23 +110,7 @@ import 'package:cv_design/components/smart_cv_card.dart';
 class CvScreen extends StatelessWidget {
   const CvScreen({super.key});
 
-  // 🔹 Alert box show karne ka helper
-  void _showAlert(BuildContext context, String text) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        title: const Text('Alert!'),
-        content: Text('You tapped on "$text"'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
-          ),
-        ],
-      ),
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -151,38 +135,27 @@ class CvScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // 🔹 Main heading with alert
-                GestureDetector(
-                  key: const ValueKey('heading_text'),
-                  onTap: () => _showAlert(context, "Smart CV Upload & Parsing"),
-                  child: const Text(
-                    "Smart CV Upload & Parsing",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: "Sora",
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                const Text(
+                  "Smart CV Upload & Parsing",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: "Sora",
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 10),
 
                 // 🔹 Subtitle with alert
-                GestureDetector(
-                  key: const ValueKey('subtitle_text'),
-                  onTap: () => _showAlert(
-                    context,
-                    "Select your resume",
-                  ),
-                  child: const Text(
-                    "Upload your old resume in PDF, Word, or Text file — our system\ninstantly extracts and organizes your details.",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: "Sora",
-                      fontSize: 15,
-                      color: Colors.white70,
-                      height: 1.4,
-                    ),
+                const Text(
+                  "Upload your old resume in PDF, Word, or Text file — our system\ninstantly extracts and organizes your details.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: "Sora",
+                    fontSize: 15,
+                    color: Colors.white70,
+                    height: 1.4,
                   ),
                 ),
                 const SizedBox(height: 50),
@@ -200,14 +173,14 @@ class CvScreen extends StatelessWidget {
                       alignment: WrapAlignment.center,
                       children: [
                         SmartCvCard(
-                          key: const ValueKey('card_word_support'),
+                       
                           width: cardWidth,
                           imagePath: 'flower/W.png',
                           title: "Word Support",
                           desc: "Easily parse resumes from Word documents",
                         ),
                         SmartCvCard(
-                          key: const ValueKey('card_pdf_support'),
+                     
                           
                           width: cardWidth,
                           imagePath: 'flower/w2.png',
@@ -215,7 +188,7 @@ class CvScreen extends StatelessWidget {
                           desc: "Upload your resume as a PDF",
                         ),
                         SmartCvCard(
-                          key: const ValueKey('card_auto_fill'),
+                    
                           width: cardWidth,
                           imagePath: 'flower/a.png',
                           title: "Auto Fill",
@@ -229,14 +202,10 @@ class CvScreen extends StatelessWidget {
                 const SizedBox(height: 90),
 
                 // 🔹 Start Button (text already shows alert internally)
-                GestureDetector(
-                  key: const ValueKey('start_now_text'),
-                  onTap: () => _showAlert(context, "Start Now"),
-                  child: SecondaryButton(
-                    text: "Start Now",
-                    color: Colors.white,
-                    textColor: const Color(0xFF512DA8),
-                  ),
+                SecondaryButton(
+                  text: "Start Now",
+                  color: Colors.white,
+                  textColor: const Color(0xFF512DA8),
                 ),
               ],
             ),
