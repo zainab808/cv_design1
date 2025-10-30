@@ -85,7 +85,13 @@ flutter:
         - asset: fonts/lato.ttf    
     - family: Sora
       fonts:
-        - asset: fonts/sora.ttf                       
+        - asset: fonts/sora.ttf     
+    - family: Play
+      fonts:
+        - asset: fonts/play.ttf   
+    - family: Play1
+      fonts:
+        - asset: fonts/play1.ttf                                       
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
